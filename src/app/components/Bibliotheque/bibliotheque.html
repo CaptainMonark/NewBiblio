@@ -1,5 +1,6 @@
 <h3>Mes livres</h3>
 
+<input #TitreLivre type="text" placeholder="ajouter un livre"><button (click)='addLivre(TitreLivre.value)'>ajouter</button>
 <ul>
     <li *ngFor="#bibliotheque of mesLivres">
         {{bibliotheque}}
