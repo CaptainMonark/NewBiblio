@@ -1,12 +1,11 @@
 import {Component} from '@angular/core';
+import {bibliotheque} from '../Bibliotheque/bibliotheque';
 
 @Component({
   selector: 'home',
-  pipes: [],
-  providers: [],
-  directives: [],
   styleUrls: ['./home.css'],
-  templateUrl: './home.html'
+  templateUrl: './home.html',
+  directives: [bibliotheque]
 })
 export class Home {
 
