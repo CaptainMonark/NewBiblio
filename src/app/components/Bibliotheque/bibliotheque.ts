@@ -1,13 +1,21 @@
 import {Component} from '@angular/core';
+import {biblioService} from '../../services/bibliotequeService';
 
 @Component({
   selector: 'bibliotheque',
   styleUrls: ['./bibliotheque.css'],
-  templateUrl: './bibliotheque.html'
+  templateUrl: './bibliotheque.html',
+  providers:[biblioService]
 })
 export class bibliotheque {
-  mesLivres = ['Le seigneur des anneaux', 'Batman','Jeremy le nain'];
-  addLivre(TitreLivre){
-    this.mesLivres.push(TitreLivre);
+  biblioService: biblioService;
+  mesLivres: string[];
+  constructor(biblioService: biblioService){
+    this.biblioService = biblioService;
+    this.mesLivres = biblioService.getAllLivres();
   }
+  ajoutLivre(TitreLivre){
+    this.biblioService.ajoutLivre(TitreLivre);
+  }
+
 }
